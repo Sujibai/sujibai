@@ -1,1 +1,553 @@
-Hello Sujibai
+<html>
+	<head>
+		<title>Sujibai-Home</title>
+		<meta charset="utf-8">
+		
+		<style type="text/css">
+			body{
+				background:#000 url(./figures/desktop/desktop3.jpg)}
+			button{
+				margin:0px;
+				padding:0px;
+				background:transparent;
+				border:2px transparent solid;
+				outline:none;
+				cursor:pointer;}
+			button:hover{
+				border:2px #a9a9a9 solid;}
+			.tex-icon{
+				margin:0px;
+				padding:0px;
+				background:transparent;
+				position:relative;
+				top:-6px;
+				border:2px transparent solid;
+				outline:none;
+				cursor:pointer;
+				width:30px;
+				height:30px;
+				font-size:34px;
+				font-family:kaiti;}
+			
+			#search{
+				position:fixed;
+				left:28%;
+				top:110px;
+				width:40%;
+				background:transparent;}
+			#text{
+				float:left;
+				background:#eee;
+				border:0px;
+				width:80%;
+				height:40px;
+				line-height:30px;
+				outline:none;
+				font-size:18px;}
+			#serch-submit{
+				float:left;
+				height:40px;
+				width:40px;
+				border:0px;
+				background-color:#eee;
+				background-image:url(http://7xt3k7.com2.z0.glb.clouddn.com/s.svg);}
+			#serch-submit:hover{
+				background-color:#bbb;}
+			form{
+				background:transparent;}
+			
+			#engine{
+				position:fixed;
+				left:38%;
+				top:160px;}
+			
+			#pt{
+				position:fixed;
+				left:40%;
+				top:200px;}
+				
+			#entertain{
+				position:fixed;
+				right:6%;
+				top:100px;}
+			
+			#mail{
+			position:fixed;
+			left:3%;
+			bottom:3%;}
+
+			#stu{
+				width:200px;
+				position:absolute;
+				left:20px;
+				top:30px;
+				background:transparent;
+				margin:0;
+				padding:0;
+			}
+			#liststu{
+				width:200px;
+				position:absolute;
+				left:0px;
+				top:30px;
+				background-color:rgba(180,180,180,0.5);
+				display:none;
+				margin:0;
+				padding:0;
+			}
+			#liststu ul{
+				list-style:none;
+				margin:0;
+				padding:0;
+			}
+			#liststu ul li{
+				padding:3px;
+				font-size:20px;
+				line-height:25px;
+				text-decoration:none;
+			}
+			a{
+				text-decoration:none;
+				color:#000;
+			}
+			#showstu{
+				font-size:23px;
+				width:30px;
+				height:30px;
+				position:relative;
+				left:30px;
+				top:0px;
+				background:transparent;
+			}
+			
+			#other{
+				position:absolute;
+				right:6%;
+				bottom:300px;}
+				
+			
+		</style>
+		
+	</head>
+	
+	<body>
+		
+	
+		<div id="search">
+			<form action="https://www.baidu.com/s"	 target="_self"	method="get">
+				<input type="text" id="text" name="wd" autocomplete="off" />
+				<input type="submit" value="" id="serch-submit"/>
+			</form>
+		</div>
+		<div id="engine">
+			<table>
+			<tr>
+				<td><button type="button" id="button-baidu">
+					<img src="./figures/baidu.png" width="30" height="30">
+				</button></td>
+				<td><button type="button" id="button-google">
+					<img src="./figures/google.png" width="30" height="30">
+				</button></td>
+				<td><button type="button" id="button-bing">
+					<img src="./figures/bing.png" width="30" height="30">
+				</button></td>
+				<td><button type="button" id="button-weixin">
+					<img src="./figures/weixin.png" width="30" height="30">
+				</button></td>
+				<td><button type="button" id="button-wikicn">
+					<img src="./figures/wikipedia.png" width="30" height="30">
+				</button></td>
+			</tr>
+			</table>
+		</div>
+		<div id="pt">
+			<table>
+			<tr>
+				<td><button type="button" class="tex-icon" id="button-byrbt">
+					邮
+				</button></td>
+				<td><button type="button" class="tex-icon" id="button-whubt">
+					珞
+				</button></td>
+				<td><button type="button" class="tex-icon" id="button-hudbt">
+					蝴
+				</button></td>
+				<td><button type="button" class="tex-icon" id="button-npupt">
+					蒲
+				</button></td>
+			</tr>
+			</table>
+		</div>
+		<div id="stu">
+		<div id="showstu">STU</div>
+		<div id="liststu">
+			<ul id="ssr">
+				<li><a href="http://www.icourse163.org/">mooc   </a> </li>
+				<li><a href="http://open.163.com/">网易公开课   </a> </li>
+				<li><a href="http://study.163.com/">网易云课堂  </a> </li>
+				<li><a href="http://www.chuanke.com/">百度传课  </a> </li>
+				<li><a href="http://www.imooc.com/#">imooc      </a> </li>
+				<li><a href="http://www.doyoudo.com/">doyoudo   </a> </li>
+				<li><a href="http://yixi.tv/">一席				</a> </li>
+				<li><a href="http://www.liaoxuefeng.com/">廖雪峰</a></li>
+				<li><a href="http://www.ruanyifeng.com/blog/">阮一峰</a></li>
+				<li><a href="http://old.sebug.net/paper/books/scipydoc/index.html">pysci</a></li>
+				<li><a href="http://wiki.jikexueyuan.com/">geekwiki</a></li>
+			</ul>
+		</div>
+		</div>
+		<div id="entertain">
+			<table>
+			<tr>				
+				<td><button type="button" id="button-bilibili">
+					<img src="./figures/bilibili.png" width="30" height="30">
+				</button></td>
+				
+				<td><button type="button" id="button-zhihu">
+					<img src="./figures/zhihu.png" width="30" height="30">
+				</button></td>
+				<td><button type="button" id="button-weibo">
+					<img src="./figures/微博.png" width="30" height="30">
+				</button></td>
+				<td><button type="button" id="button-tieba">
+					<img src="./figures/tieba.png" width="30" height="30">
+				</button></td>
+				<td><button type="button" id="button-douban">
+					<img src="./figures/douban.png" width="30" height="30">
+				</button></td>				
+			</tr><tr>
+				<td><button type="button" id="button-acfun">
+					<img src="./figures/acfun.png" width="30" height="30">
+				</button></td>
+				<td><button type="button" id="button-quora">
+					<img src="./figures/quora.png" width="30" height="30">
+				</button></td>	
+				<td><button type="button" id="button-lofter">
+					<img src="./figures/lofter.png" width="30" height="30">
+				</button></td>	
+				<td><button type="button" id="button-pixiv">
+					<img src="./figures/pixiv.png" width="30" height="30">
+				</button></td>	
+				<td><button type="button" id="button-baiduyun">
+					<img src="./figures/baiduyun.png" width="30" height="30">
+				</button></td>					
+			</tr><tr>
+				<td><button type="button" id="button-tencenttv">
+					<img src="./figures/tencenttv.png" width="30" height="30">
+				</button></td>
+				<td><button type="button" id="button-youku">
+					<img src="./figures/youku.png" width="30" height="30">
+				</button></td>	
+				<td><button type="button" id="button-aiqiyi">
+					<img src="./figures/aiqiyi.png" width="30" height="30">
+				</button></td>	
+				<td><button type="button" id="button-youtube">
+					<img src="./figures/youtube.png" width="30" height="30">
+				</button></td>	
+				<td><button type="button" id="button-ustctv">
+					<img src="./figures/ustctv.png" width="30" height="30">
+				</button></td>					
+			</tr>
+			</table>
+		</div>
+		
+		<div id="mail">
+			<table>
+			<tr>
+				<td><a href="https://mail.hust.edu.cn/coremail/XT5/index.jsp?sid=CATzqZBBxONDuqZCYKBBZuxRBCBFxceC#mail.list%7C%7B%22fid%22%3A1%7D">
+				<img src="./figures/hustmail.png" width="25" height="25"></a></td>
+				<td><a href="https://mail.qq.com"><img src="./figures/qq.png" width="30" height="30"></a></td>
+				<td><a href="http://mail.163.com/"><img src="./figures/wangyi.png" width="30" height="30"></a></td>
+				<td><a href="https://outlook.live.com/owa/"><img src="./figures/outlook.png" width="30" height="30"></a></td>
+			</tr>
+			</table>
+		</div>
+		
+		<div id="other">
+			<table>
+			<tr>
+				<td><button type="button" id="button-iconfont">
+					<img src="./figures/iconfont.png" width="30" height="30">
+				</button></td>
+				<td><button type="button" id="button-cnki">
+					<img src="./figures/cnki.png" width="30" height="30">
+				</button></td>
+				<td><button type="button" id="button-nippon">
+					<img src="./figures/nippon.png" width="30" height="30">
+				</button></td>
+				<td><button type="button" id="button-github">
+					<img src="./figures/github.png" width="30" height="30">
+				</button></td>
+				<td><button type="button" id="button-hust">
+					<img src="./figures/hust.png" width="30" height="30">
+				</button></td>
+			</tr>
+			</table>
+		</div>
+		
+		
+	
+		
+	</body>
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script>//百度搜索
+		$('#button-baidu').bind('click',function(){
+			var keywords=$('#text').val();
+			open("https://www.baidu.com/s?wd="+keywords);
+		})
+	</script>
+		<script>//谷歌搜索
+		$('#button-google').bind('click',function(){
+			var keywords=encodeURI($('#text').val());
+			if(keywords=='')
+				location.href="https://www.google.com.hk/";
+			else
+				open("https://www.google.com.hk/search?q="+keywords);
+		})
+	</script>
+	<script>//bing搜索
+		$('#button-bing').bind('click',function(){
+			var keywords=encodeURI($('#text').val());
+			open("https://cn.bing.com/search?q="+keywords);
+		})
+	</script>
+	<script>//微信搜索
+		$('#button-weixin').bind('click',function(){
+			var keywords=$('#text').val();
+			open("http://weixin.sogou.com/weixin?type=2&query="+keywords);
+		})
+	</script>
+	<script>//维基百科（镜像）
+		$('#button-wikicn').bind('click',function(){
+			var keywords=$('#text').val();
+			open("https://weiji.ga/wiki/"+keywords);
+		})
+	</script>
+	<script>//北邮人
+		$('#button-byrbt').bind('click',function(){
+			var keywords=encodeURI($('#text').val());
+			if(keywords=='')
+				location.href="http://bt.byr.cn/index.php";
+			else
+			open("http://bt.byr.cn/torrents.php?search="+keywords);
+		})
+	</script>
+	<script>//珞樱
+		$('#button-whubt').bind('click',function(){
+			var keywords=encodeURI($('#text').val());
+			if(keywords=='')
+				location.href="https://pt.whu.edu.cn/";
+			else
+			open("https://pt.whu.edu.cn/torrents.php?search="+keywords);
+		})
+	</script>
+	<script>//蝴蝶
+		$('#button-hudbt').bind('click',function(){
+			var keywords=encodeURI($('#text').val());
+			if(keywords=='')
+				location.href="https://hudbt.hust.edu.cn/index.php";
+			else
+			open("https://hudbt.hust.edu.cn/torrents.php?search="+keywords);
+		})
+	</script>
+	<script>//蒲公英
+		$('#button-npupt').bind('click',function(){
+			var keywords=encodeURI($('#text').val());
+			if(keywords=='')
+				location.href="http://npupt.com/";
+			else
+			open("http://npupt.com/torrents.php?search="+keywords);
+		})
+	</script>
+	<script>//bilibili
+		$('#button-bilibili').bind('click',function(){
+			var keywords=encodeURI($('#text').val());
+			if(keywords=='')
+				location.href="http://www.bilibili.com/";
+			else
+			open("http://search.bilibili.com/all?keyword="+keywords);
+		})
+	</script>
+	<script>//acfun
+		$('#button-acfun').bind('click',function(){
+			var keywords=encodeURI($('#text').val());
+			if(keywords=='')
+				location.href="http://www.acfun.tv/member/#area=push";
+			else
+				open("http://www.acfun.tv/search/?#query="+keywords);
+		})
+	</script>
+	<script>//知乎
+		$('#button-zhihu').bind('click',function(){
+			var keywords=encodeURI($('#text').val());
+			if(keywords=='')
+				location.href="https://www.zhihu.com/";
+			else
+				open("https://www.zhihu.com/search?type=content&q="+keywords);
+		})
+	</script>
+	<script>//quora
+		$('#button-quora').bind('click',function(){
+			var keywords=encodeURI($('#text').val());
+			if(keywords=='')
+				location.href="https://www.quora.com/";
+			else
+				open("https://www.quora.com/search?q="+keywords);
+		})
+	</script>
+	<script>//微博
+		$('#button-weibo').bind('click',function(){
+			var keywords=encodeURI($('#text').val());
+			if(keywords=='')
+				location.href="http://weibo.com/u/5017323796/home?wvr=5";
+			else
+				open("http://s.weibo.com/weibo/"+keywords);
+		})
+	</script>
+	<script>//lofter
+		$('#button-lofter').bind('click',function(){
+			var keywords=encodeURI($('#text').val());
+			if(keywords=='')
+				location.href="http://www.lofter.com/";
+			else
+				open("http://www.lofter.com/tag/"+keywords);
+		})
+	</script>
+	<script>//贴吧
+		$('#button-tieba').bind('click',function(){
+			var keywords=encodeURI($('#text').val());
+			if(keywords=='')
+				location.href="https://tieba.baidu.com/index.html";
+			else
+			open("http://tieba.baidu.com/f/search/res?qw="+keywords);
+		})
+	</script>
+	<script>//pixiv
+		$('#button-pixiv').bind('click',function(){
+			var keywords=encodeURI($('#text').val());
+			if(keywords=='')
+				location.href="http://www.pixiv.net/";
+			else
+			open("http://www.pixiv.net/search.php?word="+keywords);
+		})
+	</script>
+	<script>//豆瓣
+		$('#button-douban').bind('click',function(){
+			var keywords=encodeURI($('#text').val());
+			if(keywords=='')
+				location.href="https://www.douban.com/";
+			else
+			open("https://www.douban.com/search?cat=1002&q="+keywords);
+		})
+	</script>
+	<script>//百度云
+		$('#button-baiduyun').bind('click',function(){
+			var keywords=encodeURI($('#text').val());
+			if(keywords=='')
+				location.href="http://pan.baidu.com/disk/home#list/path=%2F";
+			else
+			open("http://www.sobaidupan.com/search.asp?wd="+keywords);
+		})
+	</script>
+	<script>//iconfont
+		$('#button-iconfont').bind('click',function(){
+			var keywords=encodeURI($('#text').val());
+			if(keywords=='')
+				location.href="http://www.iconfont.cn/plus/home/index";
+			else
+			open("http://www.iconfont.cn/plus/search/index?searchType=icon&q="+keywords);
+		})
+	</script>
+	<script>//知网
+		$('#button-cnki').bind('click',function(){
+			var keywords=encodeURI($('#text').val());
+			if(keywords=='')
+				location.href="http://www.cnki.net/";
+			else
+			open("http://search.cnki.com.cn/search.aspx?q="+keywords);
+		})
+	</script>
+	<script>//nippon
+		$('#button-nippon').bind('click',function(){
+				location.href="http://nipponcolors.com/";
+		})
+	</script>
+	<script>//Github
+		$('#button-github').bind('click',function(){
+			var keywords=encodeURI($('#text').val());
+			if(keywords=='')
+				location.href="https://github.com/";
+			else
+			open("https://github.com/search?utf8=✓&q="+keywords);
+		})
+	</script>
+	<script>//hust
+		$('#button-hust').bind('click',function(){
+			var keywords=encodeURI($('#text').val());
+			if(keywords=='')
+				location.href="http://one.hust.edu.cn";
+			else
+			open("http://one.hust.edu.cn/dcp/forward.action?path=/portal/portal&p=search#q="+keywords);
+		})
+	</script>
+	<script>//腾讯视频
+		$('#button-tencenttv').bind('click',function(){
+			var keywords=encodeURI($('#text').val());
+			if(keywords=='')
+				location.href="https://v.qq.com/";
+			else
+			open("https://v.qq.com/x/search/?q="+keywords);
+		})
+	</script>
+	<script>//优酷视频
+		$('#button-youku').bind('click',function(){
+			var keywords=encodeURI($('#text').val());
+			if(keywords=='')
+				location.href="http://www.youku.com/";
+			else
+			open("http://www.soku.com/search_video/q_"+keywords);
+		})
+	</script>
+	<script>//爱奇艺视频
+		$('#button-aiqiyi').bind('click',function(){
+			var keywords=encodeURI($('#text').val());
+			if(keywords=='')
+				location.href="http://www.iqiyi.com/";
+			else
+			open("http://so.iqiyi.com/so/q_"+keywords);
+		})
+	</script>
+	<script>//youtube
+		$('#button-youtube').bind('click',function(){
+			var keywords=encodeURI($('#text').val());
+			if(keywords=='')
+				location.href="https://www.youtube.com/";
+			else
+			open("https://www.youtube.com/results?search_query="+keywords);
+		})
+	</script>
+	<script>//中科大电视
+		$('#button-ustctv').bind('click',function(){
+			var keywords=encodeURI($('#text').val());
+			location.href="http://tv6.ustc.edu.cn/";
+		})
+	</script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#showstu').hover(function() {
+				$("#liststu").css('display', 'block');
+			}, function() {
+			   $("#liststu").css('display', 'none');
+			});
+            $("#liststu").hover(function() {
+                $(this).css('display', 'block');;
+            }, function() {
+                $(this).css('display', 'none');
+            });
+		})
+	</script>
+	<script>
+		$('#text').focus();
+	</script>
+
+</html>
