@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>loca</title>
+	<style>
+#my_canvas{
+
+	margin-left: 100px;
+	border: 1px black solid;
+
+}
+
+</style>
+</head>
+<body>
+<canvas id="my_canvas" width="1000" height="600"></canvas>
+<script type="text/javascript" src="js/object.js"></script>
+<script type="text/javascript" src="js/paddle.js"></script>
+<script type="text/javascript" src="js/bullet.js"></script>
+<script type="text/javascript" src="js/plane.js"></script>
+<script type="text/javascript" src="js/game.js"></script>
+<script>
+	var __main=function(){
+		var game=Game()
+		var flag=0
+
+		var timer=setInterval(function(){
+
+			game.update(flag)
+
+			game.context.clearRect(0,0,game.canvas.width,game.canvas.height)
+
+			game.draw()
+
+			if(game.end()){
+				game.context.font="80px Courier New"
+				game.context.fillText("GAME OVER", 220, 200);
+				clearInterval(timer)
+			}
+
+			flag++
+			if (flag%120==0){
+				flag=0
+			}
+
+		},1000/60)
+	}
+
+		__main()
+
+	</script>
+</body>
+</html>

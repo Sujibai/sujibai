@@ -7,7 +7,7 @@ html { font-size: 14px; background-color: var(--bg-color); color: var(--text-col
 body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
 a:active, a:hover { outline: 0px; }
 .in-text-selection, ::selection { background: rgb(181, 214, 252); text-shadow: none; }
-#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; padding-bottom: 70px; white-space: pre-wrap; overflow-x: visible; }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; padding-bottom: 70px; white-space: pre-wrap; overflow-x: visible; contain: layout paint; }
 .for-image #write { padding-left: 8px; padding-right: 8px; }
 body.typora-export { padding-left: 30px; padding-right: 30px; }
 @media screen and (max-width: 500px) {
@@ -92,7 +92,8 @@ p + .mathjax-block { margin-top: -1.143rem; }
 .md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
 .md-toc-content { position: relative; margin-left: 0px; }
 .md-toc::after, .md-toc-content::after { display: none; }
-.md-toc-item { display: block; color: rgb(65, 131, 196); text-decoration: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
 .md-toc-inner:hover { }
 .md-toc-inner { display: inline-block; cursor: pointer; }
 .md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: bold; }
@@ -216,6 +217,6 @@ header, .context-menu, .megamenu-content, footer { font-family: "Segoe UI", Aria
 </style>
 </head>
 <body class='typora-export' >
-<div  id='write'  class = 'is-node'><h1><a name='header-n0' class='md-header-anchor '></a>Douniuzhijian</h1><p><strong>welcome to douniuzhijian,there are some demos,have fun</strong></p><h4><a name='header-n4' class='md-header-anchor '></a><a href='http://douniuzhijian.com/home/'>导航</a></h4><h4><a name='header-n5' class='md-header-anchor '></a><a href='http://douniuzhijian.com/demos/'>demos</a></h4><h4><a name='header-n6' class='md-header-anchor '></a><a href='http://douniuzhijian.com/%E5%8A%9B%E5%AD%A6/'>力学</a></h4><h4><a name='header-n7' class='md-header-anchor '></a><a href='http://douniuzhijian.com/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/'>计算物理</a></h4><p></p></div>
+<div  id='write'  class = 'is-node'><h1><a name='header-n0' class='md-header-anchor '></a>Demos</h1><p>some demos,have fun</p><h4><a name='header-n4' class='md-header-anchor '></a><a href='http://douniuzhijian.com/demos/saolei'>扫雷</a></h4><h4><a name='header-n12' class='md-header-anchor '></a><a href='http://douniuzhijian.com/demos/mand'>曼德伯集</a></h4><h4><a name='header-n5' class='md-header-anchor '></a><a href='http://douniuzhijian.com/demos/orbit'>多体运动</a></h4><h4><a name='header-n6' class='md-header-anchor '></a><a href='http://douniuzhijian.com/demos/particle'>百电子游行</a></h4><h4><a name='header-n7' class='md-header-anchor '></a><a href='http://douniuzhijian.com/demos/elecfield'>解析势能百电子</a></h4><h4><a name='header-n8' class='md-header-anchor '></a><a href='http://douniuzhijian.com/demos/huajifly'>滑稽飞弹</a></h4><h4><a name='header-n9' class='md-header-anchor '></a><a href='http://douniuzhijian.com/demos/randomwalk'>随机发呆</a></h4><h4><a name='header-n10' class='md-header-anchor '></a><a href='http://douniuzhijian.com/demos/moneygo'>谁动了我的钱</a></h4><h4><a name='header-n11' class='md-header-anchor '></a><a href='http://douniuzhijian.com/demos/%E8%92%99%E7%89%B9%E5%8D%A1%E7%BD%97'>没有精度的蒙特卡罗</a></h4></div>
 </body>
 </html>

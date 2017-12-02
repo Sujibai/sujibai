@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style media="screen">
+      #vvv{
+        align-self: center;
+        width: 800px;
+      }
+  </style>
+</head>
+<body onload="frameheight()">
+	<div id="ppp">
+    <iframe id="vvv" frameborder="0" scrolling="no" src="http://douniuzhijian.com/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/homework1.html" height=100%></iframe>
+  </div>
+</body>
+<script>
+  function frameheight(){
+    var frame=document.getElementById("vvv")
+    var he=frame.contentDocument.body.clientHeight
+    frame.height=he
+  }
+
+</script>
+</html>
