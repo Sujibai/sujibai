@@ -1,0 +1,58 @@
+.homebanner{
+  margin-bottom: 50px;
+  width:200px;
+}
+
+.bannername{
+  font-family: "KaiTi";
+  color: #000;
+  text-decoration: none;
+}
+
+.lists{
+  padding: 0;
+  list-style:none;
+  line-height: 30px;
+  margin-left: 0;
+}
+
+.list-name{
+  margin-top: 50px;
+}
+
+.article{
+  width: 700px;
+  margin-top: 0;
+  border-bottom: 1px solid #eeeeee;
+  margin-bottom: 8px;
+  line-height: 30px;
+  text-align: left;
+}
+
+.article-title{
+  font-size: 20px;
+  font-family:"Times New Roman",Georgia,Serif;
+  text-decoration: none;
+  color: #000;
+}
+
+.article-describe{
+  float: right;
+  color: #cccccc;
+}
+
+@media screen and (max-width: 1000px) {
+  .article{
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .article{
+    text-align: center;
+    width: 80%;
+  }
+  .article-describe{
+    display: none;
+  }
+}
