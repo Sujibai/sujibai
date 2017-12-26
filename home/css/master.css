@@ -8,7 +8,7 @@ body{
     width:45%;
     background:transparent;}
   #text{
-    background:#eee;
+    background:rgba(50,70,90,0.1);
     border:0px;
     width:100%;
     height:40px;
@@ -18,11 +18,12 @@ body{
 
     .iconfont{
       font-size: 80px;
-      color: #000000;
+      color: #233;
       margin: 50px;
     }
     .iconfont:hover{
-      color:#233;
+	  cursor:pointer;
+      color:#466;
     }
 
   #engine{
