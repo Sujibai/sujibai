@@ -138,7 +138,7 @@ var puton=function(i,j,flag){
     if (numb[i][j]==0) {
       auto(i,j)
     }
-  }else if (flag==1) {
+  }else if (flag==2) {
     mark(i,j)
   }
   var count=0
@@ -182,6 +182,11 @@ var over=function(){
     ctx.fillText("RETRY",width/2,width/2);
     isover=true
 }
+
+function doNothing(){  
+        window.event.returnValue=false;  
+        return false;  
+    }
 
 canvas.onmousedown=function(e){
   if (isover) {
