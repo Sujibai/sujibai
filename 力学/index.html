@@ -16,29 +16,40 @@
         <a class="bannername" href="https://sujibai.github.io/"><h1>斗牛之间</h1></a>
     </div>
 
-
     <div class="content">
-
         <h3 class="list-name">理论力学</h3>
-        <ul class="lists">
-
-            <li>
-            <div class="article">
-                <a class="article-title" href="../力学/rigidbody.html">刚体</a>
-                <time class="article-describe">part notes about rigit body</time>
-            </div>
-            </li>
-			<li>
-            <div class="article">
-                <a class="article-title" href="../力学/经典散射.html">经典散射</a>
-                <time class="article-describe">经典散射读书笔记</time>
-            </div>
-            </li>
-
-
-        </ul>
+        <ul class="lists" id="mechlist"></ul>
     </div>
 
 </center>
 </body>
+
+<script type="text/javascript" src="../public/data/data.js"></script>
+<script type="text/javascript">
+let addList=function(position,data,kind){
+    let atitle= document.createElement("a");
+    atitle.setAttribute("class","article-title");
+    atitle.innerHTML=data.name
+    atitle.href=data.url
+
+    let adisc= document.createElement("time");
+    adisc.setAttribute("class","article-describe");
+    adisc.innerHTML=data.description
+
+    let newdiv=document.createElement("div");
+    newdiv.setAttribute("class",kind);
+    newdiv.appendChild(atitle);
+    newdiv.appendChild(adisc);
+
+    let newli=document.createElement("li");
+    newli.appendChild(newdiv);
+    position.appendChild(newli);
+}
+
+let mechc=document.getElementById("mechlist")
+
+for (var i = 0; i < mechdata.length; i++) {
+    addList(mechc,mechdata[i],"article")
+}
+</script>
 </html>
