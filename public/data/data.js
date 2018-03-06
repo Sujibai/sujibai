@@ -53,6 +53,9 @@ var mechdata=[
 ]
 
 var numedata= [
+  {"url":"./计算物理/randomwalk/randomwalk.html",
+    "name":"一维随机游走",
+    "description":"数值模拟"},
   {"url":"./计算物理/方程数值求根方法.html",
     "name":"方程数值求根方法",
     "description":"find root with fortran"},
