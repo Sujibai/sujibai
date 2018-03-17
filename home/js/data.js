@@ -15,7 +15,7 @@ var maindata=[
         "icon":"icon-weixin",
         "url0":"http://weixin.sogou.com",
         "url1":"http://weixin.sogou.com/weixin?type=2&query="},
-    {"id":"button-wikicn",//维基百科
+    {"id":"button-wikipedia",//维基百科
         "icon":"icon-wikipedia",
         "url0":"https://en.wikipedia.org/wiki/Main_Page",
         "url1":"https://en.wikipedia.org/wiki/"},
@@ -41,7 +41,7 @@ var maindata=[
         "url1":"https://www.douban.com/search?cat=1002&q="},
     
     {"id":"button-tencenttv",//腾讯视频
-        "icon":"icon-tengxunvideo",
+        "icon":"icon-tencenttv",
         "url0":"https://v.qq.com/",
         "url1":"https://v.qq.com/x/search/?q="},
     {"id":"button-youku",//优酷
@@ -64,11 +64,11 @@ var maindata=[
         "url0":"https://github.com/",
         "url1":"https://github.com/search?utf8=✓&q="},
     {"id":"button-byrbt",//北邮人
-        "icon":"icon-beiyouren",
+        "icon":"icon-byrbt",
         "url0":"http://bt.byr.cn/index.php",
         "url1":"http://bt.byr.cn/torrents.php?search=",},
     {"id":"button-whubt",//珞樱
-        "icon":"icon-luoying",
+        "icon":"icon-whubt",
         "url0":"https://pt.whu.edu.cn/",
         "url1":"https://pt.whu.edu.cn/torrents.php?search="},
     
