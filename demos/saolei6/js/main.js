@@ -156,18 +156,30 @@ let setup=function(x,y){
 let getbomb=function(i,j){
   let n=0
   if (i%2) {
-    if (typeof(blocks[i-1])!="undefined"&&typeof(blocks[i-1][j])!="undefined"&&typeof(blocks[i-1][j+1])!="undefined") {
-      n+=blocks[i-1][j].isbomb+blocks[i-1][j+1].isbomb
+    if (typeof(blocks[i-1])!="undefined"&&typeof(blocks[i-1][j])!="undefined") {
+      n+=blocks[i-1][j].isbomb
     }
-    if (typeof(blocks[i+1])!="undefined"&&typeof(blocks[i+1][j])!="undefined"&&typeof(blocks[i+1][j+1])!="undefined") {
-      n+=blocks[i+1][j].isbomb+blocks[i+1][j+1].isbomb
+    if (typeof(blocks[i-1])!="undefined"&&typeof(blocks[i-1][j+1])!="undefined") {
+      n+=blocks[i-1][j+1].isbomb
+    }
+    if (typeof(blocks[i+1])!="undefined"&&typeof(blocks[i+1][j])!="undefined") {
+      n+=blocks[i+1][j].isbomb
+    }
+    if (typeof(blocks[i+1])!="undefined"&&typeof(blocks[i+1][j+1])!="undefined") {
+      n+=blocks[i+1][j+1].isbomb
     }
   }else{
-    if (typeof(blocks[i-1])!="undefined"&&typeof(blocks[i-1][j])!="undefined"&&typeof(blocks[i-1][j-1])!="undefined") {
-      n+=blocks[i-1][j-1].isbomb+blocks[i-1][j].isbomb
+    if (typeof(blocks[i-1])!="undefined"&&typeof(blocks[i-1][j])!="undefined") {
+      n+=blocks[i-1][j].isbomb
     }
-    if (typeof(blocks[i+1])!="undefined"&&typeof(blocks[i+1][j])!="undefined"&&typeof(blocks[i+1][j-1])!="undefined") {
-      n+=blocks[i+1][j-1].isbomb+blocks[i+1][j].isbomb
+    if (typeof(blocks[i-1])!="undefined"&&typeof(blocks[i-1][j-1])!="undefined") {
+      n+=blocks[i-1][j-1].isbomb
+    }
+    if (typeof(blocks[i+1])!="undefined"&&typeof(blocks[i+1][j])!="undefined") {
+      n+=blocks[i+1][j].isbomb
+    }
+    if (typeof(blocks[i+1])!="undefined"&&typeof(blocks[i+1][j-1])!="undefined") {
+      n+=blocks[i+1][j-1].isbomb
     }
   }
   
