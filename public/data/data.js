@@ -14,6 +14,9 @@ var maindata=[
 ]
 
 let demodata=[
+  {"url":"./demos/saolei6/index.html",
+    "name":"洛天依的奇妙之旅",
+    "description":"六角扫雷"},
   {"url":"./demos/saolei/index.html",
     "name":"扫雷",
     "description":"按下滚轮标记"},
