@@ -103,17 +103,15 @@ let getindex=function(x,y){
 
 let puton=function(x,y,flag){
   [i,j]=getindex(x,y)
-  if (typeof(blocks[i])!="undefined"&&typeof(blocks[i][j])!="undefined") {
+  if (typeof(blocks[i])!="undefined"&&typeof(blocks[i][j])!="undefined"&&!blocks[i][j].ison) {
     if (flag==0) {
       blocks[i][j].ison=true
       totalon+=1
     }else{
       if (blocks[i][j].ismarked) {
         blocks[i][j].ismarked=false
-        // totalon-=1
       }else{
         blocks[i][j].ismarked=true
-        // totalon+=1
       }
     }
     update()
