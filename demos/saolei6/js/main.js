@@ -2,7 +2,8 @@ var canvas=document.getElementById('myCanvas');
 var ctx=canvas.getContext('2d');
 ctx.strokeStyle='#000';
 var width=600;
-let game=false
+let isover=true
+let isstarted=false
 var ndim=15
 let blockwidth=25
 let blocks=[]
@@ -119,24 +120,72 @@ let puton=function(x,y,flag){
   }
 }
 
-let setup=function(x,y){
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-  [i0,j0]=getindex(x,y)
-  total=0
-  totalon=0
-  game=true
+let setbomb=function(){
   for (let i = 0; i < 27; i++) {
     for (let j = 0; j < 8; j++) {
-      // total+=1
       blocks[i][j].ison=false
       blocks[i][j].ismarked=false
       blocks[i][j].isbomb=false
-      pos=Math.random()
-        if (pos<0.34&&i!=i0&&j!=j0&&!(j==j0+1&&i==i0+1)&&!(j==j0-1&&i==i0-1)) {
+      let pos=Math.random()
+        if (pos<0.28) {
           blocks[i][j].isbomb=1
         }
     }
   }
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  for (let i = 0; i < 27; i++) {
+    for (let j = 0; j < 8; j++) {
+      blocks[i][j].update()
+      blocks[i][j].show()
+    }
+  }
+}
+
+let deletebomb=function(i,j){
+  blocks[i][j].isbomb=false
+  if (i%2) {
+    if (typeof(blocks[i-1])!="undefined"&&typeof(blocks[i-1][j])!="undefined") {
+      blocks[i-1][j].isbomb=false
+    }
+    if (typeof(blocks[i-1])!="undefined"&&typeof(blocks[i-1][j+1])!="undefined") {
+      blocks[i-1][j+1].isbomb=false
+    }
+    if (typeof(blocks[i+1])!="undefined"&&typeof(blocks[i+1][j])!="undefined") {
+      blocks[i+1][j].isbomb=false
+    }
+    if (typeof(blocks[i+1])!="undefined"&&typeof(blocks[i+1][j+1])!="undefined") {
+      blocks[i+1][j+1].isbomb=false
+    }
+  }else{
+    if (typeof(blocks[i-1])!="undefined"&&typeof(blocks[i-1][j])!="undefined") {
+      blocks[i-1][j].isbomb=false
+    }
+    if (typeof(blocks[i-1])!="undefined"&&typeof(blocks[i-1][j-1])!="undefined") {
+      blocks[i-1][j-1].isbomb=false
+    }
+    if (typeof(blocks[i+1])!="undefined"&&typeof(blocks[i+1][j])!="undefined") {
+      blocks[i+1][j].isbomb=false
+    }
+    if (typeof(blocks[i+1])!="undefined"&&typeof(blocks[i+1][j-1])!="undefined") {
+      blocks[i+1][j-1].isbomb=false
+    }
+  }
+  if (typeof(blocks[i-2])!="undefined"&&typeof(blocks[i-2][j])!="undefined") {
+    blocks[i-2][j].isbomb=false
+  }
+  if (typeof(blocks[i+2])!="undefined"&&typeof(blocks[i+2][j])!="undefined") {
+    blocks[i+2][j].isbomb=false
+  }
+}
+
+let setup=function(x,y){
+  // setbomb()
+  [i0,j0]=getindex(x,y)
+  deletebomb(i0,j0)
+  total=0
+  totalon=0
+  isover=false
+  isstarted=true
   for (let i = 0; i < 27; i++) {
     for (let j = 0; j < 8; j++) {
       if (blocks[i][j].isbomb==false) {
@@ -145,12 +194,8 @@ let setup=function(x,y){
       }
     }
   }
-  for (let i = 0; i < 27; i++) {
-    for (let j = 0; j < 8; j++) {
-      blocks[i][j].update()
-      blocks[i][j].show()
-    }
-  }
+  puton(x,y,0)
+  
 }
 
 let getbomb=function(i,j){
@@ -193,7 +238,8 @@ let getbomb=function(i,j){
 }
 
 let over =function(char){
-  game=false
+  isover=true
+  isstarted=false
   ctx.fillStyle = "#000";
   ctx.font = "normal 100px 微软雅黑";
   ctx.textBaseline = "middle";
@@ -216,17 +262,25 @@ let cheat=function(){
     update()
 }
 
+let mouse=function(e){
+  if (isover) {
+    setbomb()
+    isover=false
+  }else if(!isover&&!isstarted&&e.button==0){
+    setup(e.offsetX,e.offsetY)
+  }else if(!isover&&isstarted){
+    puton(e.offsetX,e.offsetY,e.button)
+  }
+}
+
 function doNothing(){  
   window.event.returnValue=false;  
   return false;  
 }
 
 canvas.onmousedown=function(e){
-  if (game) {
-    puton(e.offsetX,e.offsetY,e.button)
-  }else if(e.button==0){
-    setup(e.offsetX,e.offsetY)
-  }
+  // mouse(e.offsetX,e.offsetY,e.button)
+  mouse(e)
 }
 
 _main_()
