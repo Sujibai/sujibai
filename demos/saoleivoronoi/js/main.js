@@ -373,9 +373,10 @@ let getindex=function(e){
 
 let puton=function(flag,but){
   if (but==0) {
-    flag.ison=true
-    if (!flag.isbomb) {
+    if (!flag.isbomb&&!flag.ison) {
+      console.log(flag.ison);
       count+=1
+      flag.ison=true
       if (flag.bombnumb==0) {
         for (let i = 0; i < flag.neighbors.length; i++) {
           if (!flag.neighbors[i].ison) {
@@ -389,6 +390,7 @@ let puton=function(flag,but){
       }
     }
     if (flag.isbomb) {
+      flag.ison=true
       gameover("DIE")
       return
     }
@@ -400,6 +402,7 @@ let puton=function(flag,but){
     }
   }
   flag.update()
+  console.log(count,total);
   reDraw()
 }
 
