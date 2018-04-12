@@ -3,7 +3,7 @@ class Block {
         this.point=point
         this.traingles=[]
         this.clines=[]
-        this.edges=[]
+        this.edges=[] 
         this.edgepoints=[]
         this.color="#67ccff"
         this.x=Math.random()*2-1
