@@ -86,8 +86,8 @@ class Block {
     highlight(){
         ctx.beginPath();
         ctx.fillStyle=this.color;
-        ctx.strokeStyle='#ff0';
-        ctx.lineWidth=2;
+        ctx.strokeStyle='#FF8000';
+        ctx.lineWidth=3;
         let px=scalex*this.edgepoints[0].x+centerx
         let py=canvas.height-(scaley*this.edgepoints[0].y+centery)
         ctx.moveTo(px,py)
