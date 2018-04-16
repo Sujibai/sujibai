@@ -208,7 +208,7 @@ let initBlocks=function(){
 let initbomb=function(index){
   for (let i = 0; i < blocks.length; i++) {
     let pos=Math.random()
-    if (pos<0.3) {
+    if (pos<0.25) {
       blocks[i].isbomb=true
     }
   }
@@ -437,7 +437,7 @@ let wating=function(e){
       window.clearInterval(t1); 
     }
     fff=true
-  }, 200);
+  }, 100);
 }
 
 function doNothing(){  
