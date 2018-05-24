@@ -11,10 +11,14 @@ var maindata=[
         "icon":"icon-bing",
         "url0":"https://cn.bing.com",
         "url1":"https://cn.bing.com/search?q="},
-    {"id":"button-weixin",//微信
-        "icon":"icon-weixin",
-        "url0":"http://weixin.sogou.com",
-        "url1":"http://weixin.sogou.com/weixin?type=2&query="},
+    // {"id":"button-weixin",//微信
+    //     "icon":"icon-weixin",
+    //     "url0":"http://weixin.sogou.com",
+    //     "url1":"http://weixin.sogou.com/weixin?type=2&query="},
+    {"id":"button-weixin",//谷歌学术
+        "icon":"icon-scholar",
+        "url0":"https://scholar.google.com",
+        "url1":"https://scholar.google.com/scholar?q="},
     {"id":"button-wikipedia",//维基百科
         "icon":"icon-wikipedia",
         "url0":"https://en.wikipedia.org/wiki/Main_Page",
@@ -54,7 +58,7 @@ var maindata=[
         "url1":"http://www.xilinjie.com/s?q="},
     {"id":"button-youtube",//YouTube
         "icon":"icon-youtube",
-        "url0":"https://www.youtube.com/",
+        "url0":"https://www.youtube.com/feed/subscriptions",
         "url1":"https://www.youtube.com/results?search_query="},
     {"id":"button-ustctv",//中科大网络电视
         "icon":"icon-ustctv",

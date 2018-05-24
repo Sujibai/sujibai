@@ -4,17 +4,39 @@ let addList=function(position,data){
     link.setAttribute("id",data.id);
     link.onclick=function(){
         var keywords=encodeURI(document.getElementById('text').value);
-        if (keywords&&data.url1) {
-            // open(data.url1+keywords)//open in new tab
-            location.href=data.url1+keywords;//open in this tab
-        } else {
-            // open(data.url0);
-            location.href=data.url0;
+        if (iscontrol) {
+            if (keywords&&data.url1) {
+                open(data.url1+keywords)//open in new tab
+            }
+            else {
+                open(data.url0);
+            }
+        }
+        else{
+            if (keywords&&data.url1&&!iscontrol) {
+                location.href=data.url1+keywords;//open in this tab
+            }
+            else {
+                location.href=data.url0;
+            }
         }
     }
     let td=document.createElement("td");
     td.appendChild(link);
     position.appendChild(td);
+}
+let iscontrol=false
+
+document.onkeydown = function (e) {
+    if (e.key=="Control") {
+        iscontrol=true
+    }
+}
+
+document.onkeyup = function (e) {
+    if (e.key=="Control") {
+        iscontrol=false
+    }
 }
 
 let mainc=document.getElementById("maintab")
