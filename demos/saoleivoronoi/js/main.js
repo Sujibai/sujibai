@@ -208,7 +208,7 @@ let initBlocks=function(){
 let initbomb=function(index){
   for (let i = 0; i < blocks.length; i++) {
     let pos=Math.random()
-    if (pos<0.25) {
+    if (pos<data.bombrates) {
       blocks[i].isbomb=true
     }
   }
@@ -284,6 +284,7 @@ let allatedge=function(trang){
   return false
 }
 
+//去重
 let localpone=function(localp){
   for (let i = 0; i < localp.length; i++) {
     for (let j = localp.length-1; j > i; j--) {
@@ -295,10 +296,13 @@ let localpone=function(localp){
   return localp
 }
 
+
+//边界去重
 let edgeone=function(edge){
   for (let i = 0; i < edge.length; i++) {
     for (let j = edge.length-1; j > i; j--) {
       if (edge[i].points[0]==edge[j].points[0]&&edge[i].points[1]==edge[j].points[1]) {
+        //如果边界线段的两个端点都相同，去除一个
         edge.splice(j,1)
       }
     }
@@ -306,6 +310,7 @@ let edgeone=function(edge){
   return edge
 }
 
+//判断元素是否在数组内
 function inarray(a,ar) {
   for (let i = 0; i < ar.length; i++) {
     if (a==ar[i]) {
@@ -315,53 +320,53 @@ function inarray(a,ar) {
   return false
 }
 
-let reDraw=function(){  
+
+//重绘
+let reDraw=function(){
+
+  let godie=false
+  //清屏  
   ctx.clearRect(0,0,canvas.width,canvas.height)
   ctx.fillStyle="#fff"
   ctx.fillRect(0,0,width,height)
 
+  //重绘所有方块
   for (let i = 0; i < blocks.length; i++) {
     blocks[i].update()
     blocks[i].area()
   }
 
-  // for (let i = 0; i < traingleedge.length; i++) {
-  //   traingleedge[i].color="#ff0"
-  //   traingleedge[i].show()
-  // }
-
+  //重绘所有边界
   for (let i = 0; i < blockedge.length; i++) {
     blockedge[i].show()
   }
 
-  // for (let i = 0; i < blocks.length; i++) {
-  //   blocks[i].point.show()
-  // }
+  if (isover=="WIN"||isover=="DIE") {//输出结束语
+    console.log("over");
+    ctx.fillStyle = "#000";
+    ctx.font = "normal 100px 微软雅黑";
+    ctx.textBaseline = "middle";
+    ctx.textAlign = "center";
+    ctx.fillText(isover,canvas.width/2,canvas.height/2);
+  }
 }
 
-let gameover=function(str){
-  gaming=false
-  isover=true
-  reDraw()
-  ctx.fillStyle = "#000";
-  ctx.font = "normal 100px 微软雅黑";
-  ctx.textBaseline = "middle";
-  ctx.textAlign = "center";
-  ctx.fillText(str,canvas.width/2,canvas.height/2);
-}
 
+//获取鼠标事件e位置的对应方块索引
 let getindex=function(e){
   let x=(e.offsetX-centerx)/scalex
   let y=(canvas.height-e.offsetY-centery)/scaley
   let dis=[]
   let index=[]
   let minindex=0
+  //获取到所有方块对应点的距离存入dis，其索引存入index
   for (let i = 0; i < p.length; i++) {
     dis.push(Math.sqrt((p[i].x-x)**2+(p[i].y-y)**2))
     index.push(i)
   }
   let mindis=dis[0]
   minindex=0
+  //比较点击处到各方快点的距离，找出最小值对应的索引并返回
   for (let i = 0; i < dis.length; i++) {
     if (dis[i]<mindis) {
       mindis=dis[i]
@@ -371,46 +376,78 @@ let getindex=function(e){
   return minindex
 }
 
+//翻开方块，输入对应方块flag和点击类型but
 let puton=function(flag,but){
-  if (but==0) {
-    if (!flag.isbomb&&!flag.ison) {
-      console.log(flag.ison);
-      count+=1
-      flag.ison=true
-      if (flag.bombnumb==0) {
-        for (let i = 0; i < flag.neighbors.length; i++) {
-          if (!flag.neighbors[i].ison) {
-            puton(flag.neighbors[i],0)
-          }
-        }
-      }
-      if(count==total){
-        gameover("WIN")
-        return
-      }
-    }
+    //如果左键炸弹，结束游戏输出DIE
     if (flag.isbomb) {
       flag.ison=true
-      gameover("DIE")
+      gaming=false
+      isover="DIE"
+    }
+
+  if (!flag.isbomb&&!flag.ison) {
+    //对应方块不是炸弹且没有被翻开
+    // console.log(flag.ison);
+    flag.ison=true//将对应方块翻开
+    flag.update()//更新方块状态
+    count+=1//已翻开数+1
+    if(count==total){//如果全部翻开，结束游戏并显示WIN
+      gaming=false
+      isover="WIN"
+    }
+    console.log(count,total);//输出已翻开方块和总方块数目
+    
+    //处理周围炸弹数为0的情况，递归调用puton翻开周围所有方块
+    if (flag.bombnumb==0) {
+      for (let i = 0; i < flag.neighbors.length; i++) {
+        if (!flag.neighbors[i].ison) {
+          puton(flag.neighbors[i],0)
+        }
+      }
+      reDraw()
       return
     }
-  }else{
-    if (flag.ismarked==true) {
-      flag.ismarked=false
-    } else if (flag.ismarked==false){
-      flag.ismarked=true
+  }else if (!flag.isbomb&&flag.ison) {
+    //打开辅助
+    let neighbormarknumb=0
+    for (let i = 0; i < flag.neighbors.length; i++) {//获取被标记的邻居数
+      if (flag.neighbors[i].ismarked) {
+        neighbormarknumb+=1
+      }
+    }
+    if (neighbormarknumb==flag.bombnumb) {//如果被标记数和总数相等
+      for (let i = 0; i < flag.neighbors.length; i++) {//获取被标记的邻居数
+        if (!flag.neighbors[i].ismarked&&!flag.neighbors[i].ison) {
+          console.log(flag.neighbors[i].ismarked,flag.neighbors[i].ison);
+          puton(flag.neighbors[i],0)
+        }
+      }
     }
   }
-  flag.update()
-  console.log(count,total);
-  reDraw()
+  reDraw()//重绘
 }
 
+//进行标记和取消标记
+let mark=function(flag,but){
+  if (flag.ismarked==true) {
+    flag.ismarked=false
+  } else if (flag.ismarked==false){
+    flag.ismarked=true
+  }
+}
+
+
+//处理游戏进行时的鼠标事件
 let mouse=function(e){
-  let minindex=getindex(e)
+  let minindex=getindex(e)//获取点击位置的方块索引
   let flag=p[minindex].block
   if (flag) {
-    puton(flag,e.button)
+    //如果对应方块存在就进行翻动（打开或标记）处理
+    if (e.button==0) {
+      puton(flag,e.button)
+    }else{
+      mark(flag,e.button)
+    }
   }
   wating(e)
 }
@@ -419,12 +456,14 @@ let onthis=function(e){
   let minindex=getindex(e)
   if (p[minindex].block) {
     reDraw()
+    p[minindex].block.highlight()
     for (let i = 0; i < p[minindex].block.neighbors.length; i++) {
       p[minindex].block.neighbors[i].highlight()
     }
   }
 }
 
+//设定延迟高亮处理
 let wating=function(e){
   let fff=false
   if (typeof(t1)!="undefined") {
@@ -432,19 +471,22 @@ let wating=function(e){
   }
   
   t1=setInterval(function fuck() {
-    if (fff&&gaming) {
+    if (fff&&!isover) {
+      
       onthis(e)
       window.clearInterval(t1); 
     }
     fff=true
-  }, 100);
+  }, data.watingtime);
 }
 
+//配合html屏蔽右键菜单
 function doNothing(){  
   window.event.returnValue=false;  
   return false;  
 }
 
+//作弊功能，翻开全部方块
 let cheat=function(){
   for (let i = 0; i < blocks.length; i++) {
     if (!blocks[i].isbomb) {
@@ -456,7 +498,10 @@ let cheat=function(){
   }
 }
 
+//总鼠标事件，进行游戏的状态判断
 canvas.onmousedown=function(e){
+  console.log(gaming,isover);
+  
   if (gaming) {
     mouse(e)
   }else if(isover){
@@ -465,8 +510,10 @@ canvas.onmousedown=function(e){
     start(e)
   }
 }
+//hover事件处理
 canvas.onmousemove=function(e){
-  if (gaming) {
+  if (!isover) {
+    
     wating(e)
   }
 }
