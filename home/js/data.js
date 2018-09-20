@@ -17,7 +17,7 @@ var maindata=[
     //     "url1":"http://weixin.sogou.com/weixin?type=2&query="},
     {"id":"button-weixin",//谷歌学术
         "icon":"icon-scholar",
-        "url0":"https://scholar.google.com",
+        "url0":"https://www.labxing.com/paper",
         "url1":"https://scholar.google.com/scholar?q="},
     {"id":"button-wikipedia",//维基百科
         "icon":"icon-wikipedia",
@@ -62,7 +62,7 @@ var maindata=[
         "url1":"https://www.youtube.com/results?search_query="},
     {"id":"button-ustctv",//中科大网络电视
         "icon":"icon-ustctv",
-        "url0":"http://tv6.ustc.edu.cn/",},
+        "url0":"https://iptv.tsinghua.edu.cn/v2/list/channel/%E9%AB%98%E6%B8%85%E9%A2%91%E9%81%93",},
     {"id":"button-github",//GitHub
         "icon":"icon-github",
         "url0":"https://github.com/",

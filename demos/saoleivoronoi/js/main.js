@@ -413,12 +413,14 @@ let puton=function(flag,but){
     for (let i = 0; i < flag.neighbors.length; i++) {//获取被标记的邻居数
       if (flag.neighbors[i].ismarked) {
         neighbormarknumb+=1
+        console.log(flag.neighbors[i]);
       }
     }
+    console.log("number",neighbormarknumb,flag.bombnumb);
+    
     if (neighbormarknumb==flag.bombnumb) {//如果被标记数和总数相等
       for (let i = 0; i < flag.neighbors.length; i++) {//获取被标记的邻居数
         if (!flag.neighbors[i].ismarked&&!flag.neighbors[i].ison) {
-          console.log(flag.neighbors[i].ismarked,flag.neighbors[i].ison);
           puton(flag.neighbors[i],0)
         }
       }
@@ -500,8 +502,6 @@ let cheat=function(){
 
 //总鼠标事件，进行游戏的状态判断
 canvas.onmousedown=function(e){
-  console.log(gaming,isover);
-  
   if (gaming) {
     mouse(e)
   }else if(isover){
