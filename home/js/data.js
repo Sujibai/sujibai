@@ -62,7 +62,7 @@ var maindata=[
         "url1":"https://www.youtube.com/results?search_query="},
     {"id":"button-ustctv",//中科大网络电视
         "icon":"icon-ustctv",
-        "url0":"https://iptv.tsinghua.edu.cn/v2/list/channel/%E9%AB%98%E6%B8%85%E9%A2%91%E9%81%93",},
+        "url0":"http://tv.byr.cn/show",},
     {"id":"button-github",//GitHub
         "icon":"icon-github",
         "url0":"https://github.com/",
