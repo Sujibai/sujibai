@@ -40,7 +40,7 @@ var maindata=[
         "url0":"https://tieba.baidu.com/index.html",
         "url1":"http://tieba.baidu.com/f/search/res?ie=utf-8&qw="},
     {"id":"button-douban",//豆瓣
-        "icon":"icon-douban",
+        "icon":"icon-douzi",
         "url0":"https://www.douban.com/",
         "url1":"https://www.douban.com/search?cat=1002&q="},
     
@@ -48,23 +48,23 @@ var maindata=[
         "icon":"icon-tencenttv",
         "url0":"https://v.qq.com/",
         "url1":"https://v.qq.com/x/search/?q="},
-    {"id":"button-youku",//优酷
-        "icon":"icon-youku",
-        "url0":"http://www.youku.com/",
-        "url1":"http://www.soku.com/search_video/q_"},
+    {"id":"button-youku",//胖鸟
+        "icon":"icon-niao",
+        "url0":"http://www.pniao.com/",
+        "url1":"http://www.pniao.com/Mov/so/"},
     {"id":"button-baiduyun",//百度云
         "icon":"icon-baiduyun",
         "url0":"http://pan.baidu.com/disk/home",
         "url1":"http://www.xilinjie.com/s?q="},
     {"id":"button-youtube",//YouTube
-        "icon":"icon-youtube",
+        "icon":"icon-youtube1",
         "url0":"https://www.youtube.com/feed/subscriptions",
         "url1":"https://www.youtube.com/results?search_query="},
     {"id":"button-ustctv",//中科大网络电视
-        "icon":"icon-ustctv",
+        "icon":"icon-tv",
         "url0":"http://tv.byr.cn/show",},
     {"id":"button-github",//GitHub
-        "icon":"icon-github",
+        "icon":"icon-github1",
         "url0":"https://github.com/",
         "url1":"https://github.com/search?utf8=✓&q="},
     {"id":"button-byrbt",//北邮人
