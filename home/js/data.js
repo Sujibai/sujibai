@@ -79,5 +79,8 @@ var maindata=[
         "icon":"icon-whubt",
         "url0":"https://pt.whu.edu.cn/",
         "url1":"https://pt.whu.edu.cn/torrents.php?search="},
-    
+    {"id":"button-tjupt",//北洋园
+        "icon":"icon-tianjin",
+        "url0":"https://www.tjupt.org",
+        "url1":"https://www.tjupt.org/torrents.php?search="},
   ]
