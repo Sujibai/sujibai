@@ -30,7 +30,7 @@ var maindata=[
     {"id":"button-bilibili",//哔哩哔哩
         "icon":"icon-bilibili",
         "url0":"https://t.bilibili.com/",
-        "url1":"http://search.bilibili.com/all?keyword="},
+        "url1":"https://search.bilibili.com/all?keyword="},
     {"id":"button-zhihu",//知乎
         "icon":"icon-zhihu",
         "url0":"https://www.zhihu.com/",
@@ -42,7 +42,7 @@ var maindata=[
     {"id":"button-tieba",//贴吧
         "icon":"icon-tieba",
         "url0":"https://tieba.baidu.com/index.html",
-        "url1":"http://tieba.baidu.com/f/search/res?ie=utf-8&qw="},
+        "url1":"https://tieba.baidu.com/f/search/res?ie=utf-8&qw="},
     {"id":"button-douban",//豆瓣
         "icon":"icon-douban",
         "url0":"https://www.douban.com/",
@@ -52,10 +52,14 @@ var maindata=[
         "icon":"icon-tencenttv",
         "url0":"https://v.qq.com/",
         "url1":"https://v.qq.com/x/search/?q="},
-    {"id":"button-youku",//优酷
-        "icon":"icon-youku",
-        "url0":"http://www.youku.com/",
-        "url1":"http://www.soku.com/search_video/q_"},
+    // {"id":"button-youku",//优酷
+    //     "icon":"icon-youku",
+    //     "url0":"http://www.youku.com/",
+    //     "url1":"http://www.soku.com/search_video/q_"},
+    {"id":"button-pniao",//胖鸟
+        "icon":"icon-niao",
+        "url0":"http://www.pniao.com",
+        "url1":"http://www.pniao.com/Mov/so/"},
     {"id":"button-baiduyun",//百度云
         "icon":"icon-baiduyun",
         "url0":"http://pan.baidu.com/disk/home",
