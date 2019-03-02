@@ -81,8 +81,8 @@ var maindata=[
         "url1":"http://bt.byr.cn/torrents.php?search=",},
     {"id":"button-whubt",//珞樱
         "icon":"icon-whubt",
-        "url0":"https://pt.whu.edu.cn/",
-        "url1":"https://pt.whu.edu.cn/torrents.php?search="},
+        "url0":"https://whu.pt/index.php",
+        "url1":"https://whu.pt/torrents.php?search="},
     {"id":"button-tjupt",//北洋园
         "icon":"icon-tianjin",
         "url0":"https://www.tjupt.org",
