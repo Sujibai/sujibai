@@ -56,10 +56,9 @@ var maindata=[
     //     "icon":"icon-youku",
     //     "url0":"http://www.youku.com/",
     //     "url1":"http://www.soku.com/search_video/q_"},
-    {"id":"button-pniao",//胖鸟
-        "icon":"icon-niao",
-        "url0":"http://www.pniao.com",
-        "url1":"http://www.pniao.com/Mov/so/"},
+    {"id":"button-jiumo",//鸠摩搜书
+        "icon":"icon-shu",
+        "url0":"https://www.jiumodiary.com/"},
     {"id":"button-baiduyun",//百度云
         "icon":"icon-baiduyun",
         "url0":"http://pan.baidu.com/disk/home",
